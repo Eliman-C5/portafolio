@@ -1,0 +1,594 @@
+:root {
+  --gray: #8c9292;
+  --gray-hover: #676b6b;
+  --black: #222525;
+  --light-blue: #16e9ec;
+  --blue: #299bf4;
+  --green: #29f46e;
+  --red: #f42959;
+  --yellow: #f7ee18;
+  --white: #f3efef;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0 0.5rem;
+  background-color: var(--black);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "contact contact contact";
+}
+
+body > * {
+  color: var(--white);
+}
+
+/******************************* Header *******************************/
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+header > h4 {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+header > h1 {
+  font-size: 3.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+.links {
+  margin: 1.33rem 0;
+}
+
+.links > a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+/********************************** Main ******************************/
+
+main {
+  grid-area: main;
+}
+
+/************ Informacion ***********/
+
+#informacion {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 2.5rem 0;
+  min-height: 100vh;
+}
+
+.foto-de-perfil {
+  height: 320px;
+  flex: 1;
+  margin-top: 2.5rem;
+}
+
+.informacion-escrito {
+  flex: 2;
+}
+
+.proposito {
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-align: left;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.redes-sociales {
+  text-align: center;
+}
+
+.redes-sociales a {
+  margin: 0.8rem;
+}
+
+/************* Proyectos ***********/
+
+#proyectos h4 {
+  font-size: 1.7rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 3rem 0;
+  letter-spacing: 0.1rem;
+}
+
+.proyecto {
+  display: flex;
+  padding: 0.8rem;
+  margin: 1rem 0 6rem 0;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+}
+
+.proyecto-foto {
+  height: 250px;
+  flex: 1 0 40%;
+  border: 5px solid var(--white);
+}
+
+.proyecto-foto img {
+  height: 100%;
+  width: 100%;
+}
+
+.proyecto-botones {
+  margin: 0.8rem 0 0.4rem 0.4rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.proyecto-btn {
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 0.3rem;
+  background-color: var(--gray);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+  padding: 0.3rem 2.5rem;
+  text-decoration: none;
+  width: max-content;
+}
+
+.proyecto-pagina {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.proyecto-btn:hover {
+  background-color: var(--gray-hover);
+  color: var(--black);
+}
+
+.proyecto-resumen {
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.proyecto-resumen > p {
+  font-size: 1.5rem;
+  text-align: initial;
+  padding: 0 0.8rem;
+}
+
+.proyecto-resumen h3 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  letter-spacing: 0.1rem;
+}
+
+/***************************** Contacto *******************************/
+
+#contacto {
+  grid-area: contact;
+  padding: 0.7rem;
+  display: flex;
+}
+
+.colaboracion {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.presentacion {
+  margin: auto;
+}
+
+.correo {
+  text-decoration: underline;
+  color: #2525f1;
+}
+
+/***************************** Responsive ***************************/
+
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 24px;
+  }
+
+  header > h4 {
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+  }
+
+  header > h1 {
+    font-size: 4rem;
+    letter-spacing: 0.8rem;
+  }
+
+  .links > a {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .proposito {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+
+  #proyectos h4 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 1.9rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .proyecto-resumen > h3 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .proyecto-botones {
+    height: 1.7rem;
+  }
+
+  .proyecto-foto {
+    height: 350px;
+  }
+
+  .colaboracion {
+    font-size: 1.9rem;
+    letter-spacing: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  html {
+    font-size: 20px;
+  }
+
+  header > h4 {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+  }
+
+  header > h1 {
+    font-size: 3.7rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .links > a {
+    font-size: 1.4rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .foto-de-perfil {
+    margin-top: 2rem;
+  }
+
+  .proyecto-resumen > h3 {
+    letter-spacing: 0.15rem;
+    font-size: 2rem;
+  }
+
+  .proyecto-botones {
+    height: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  html {
+    font-size: 18px;
+  }
+
+  .proposito {
+    font-size: 2.3rem;
+    letter-spacing: 0.2rem;
+    margin-top: 0;
+  }
+
+  .foto-de-perfil {
+    height: 380px;
+    margin-top: 0;
+  }
+
+  .proyecto-foto {
+    height: 290px;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .proyecto-btn {
+    padding: 0.15rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .proposito {
+    font-size: 1.8rem;
+  }
+
+  .foto-de-perfil {
+    margin-top: 3.5rem;
+    height: 300px;
+  }
+
+  .proyecto-btn {
+    padding: 0.35rem 2.5rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .foto-de-perfil {
+    height: 280px;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 1.4rem;
+  }
+
+  .proyecto-btn {
+    padding: 0.2rem 2.5rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .proposito {
+    font-size: 1.6rem;
+  }
+
+  .foto-de-perfil {
+    height: 260px;
+  }
+
+  .proyecto-resumen h3 {
+    font-size: 1.6rem;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 1.3rem;
+  }
+
+  .colaboracion {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  header > h4 {
+    font-size: 1rem;
+  }
+
+  header > h1 {
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .links > a {
+    font-size: 0.9rem;
+  }
+
+  #informacion {
+    flex-direction: column-reverse;
+  }
+
+  .proposito {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+
+  #proyectos h4 {
+    font-size: 1.4rem;
+  }
+
+  .proyecto {
+    padding: 0.6rem 0.2rem;
+  }
+
+  .proyecto-resumen {
+    padding: 0.4rem 0;
+  }
+
+  .proyecto-resumen h3 {
+    font-size: 1.4rem;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 1.1rem;
+    letter-spacing: 0.15rem;
+    padding: 0 0 0 0.4rem;
+  }
+
+  .foto-de-perfil {
+    max-height: 230px;
+    width: 225px;
+    border-radius: 48%;
+  }
+
+  .proyecto {
+    flex-direction: column-reverse;
+  }
+
+  .proyecto:nth-child(3) {
+    flex-direction: column;
+  }
+
+  .proyecto-foto {
+    width: 50%;
+    flex: none;
+    margin: auto;
+  }
+
+  .proyecto-botones {
+    justify-content: center;
+  }
+
+  #contacto {
+    padding: 0.4rem;
+  }
+
+  .colaboracion {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .foto-de-perfil {
+    max-height: 195px;
+    width: 210px;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .proyecto-btn {
+    font-size: 0.8rem;
+  }
+
+  .colaboracion {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  header > h1 {
+    font-size: 2.6rem;
+  }
+
+  .proposito {
+    font-weight: 400;
+  }
+
+  .foto-de-perfil {
+    max-height: 180px;
+    width: 190px;
+  }
+
+  .colaboracion {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
+  .presentacion {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  header > h1 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .foto-de-perfil {
+    max-height: 170px;
+    width: 165px;
+  }
+
+  .proposito {
+    font-size: 1rem;
+  }
+
+  #proyectos h4 {
+    font-size: 1.15rem;
+  }
+
+  .proyecto-foto {
+    height: 180px;
+  }
+
+  .proyecto-resumen {
+    font-size: 1.1rem;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #informacion {
+    min-height: 85vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header > h1 {
+    font-size: 1.75rem;
+  }
+
+  .links > a {
+    font-size: 0.75rem;
+  }
+
+  .proposito {
+    font-size: 0.9rem;
+  }
+
+  .foto-de-perfil {
+    max-height: 150px;
+    width: 145px;
+  }
+
+  #proyectos h4 {
+    font-size: 1rem;
+  }
+
+  .proyecto-resumen h3 {
+    font-size: 1rem;
+  }
+
+  .proyecto-resumen > p {
+    font-size: 0.8rem;
+  }
+
+  .proyecto-foto {
+    height: 140px;
+    width: 40%;
+  }
+
+  .colaboracion {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-height: 640px) {
+  #informacion {
+    min-height: 70vh;
+  }
+}
