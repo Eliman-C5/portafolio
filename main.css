@@ -85,7 +85,7 @@ main {
   display: flex;
   align-items: center;
   padding: 1rem;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 rem 0;
   min-height: 100vh;
 }
 
@@ -93,6 +93,8 @@ main {
   height: 320px;
   flex: 1;
   margin-top: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 1px 4px 3px 1px #000;
 }
 
 .informacion-escrito {
@@ -100,7 +102,7 @@ main {
 }
 
 .proposito {
-  font-size: 2.3rem;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
   text-align: left;
@@ -133,9 +135,12 @@ main {
   border-radius: 5px;
 }
 
+.proyecto-trabajo {
+  flex: 1 0 40%;
+}
+
 .proyecto-foto {
   height: 250px;
-  flex: 1 0 40%;
   border: 5px solid var(--white);
 }
 
@@ -146,34 +151,36 @@ main {
 
 .proyecto-botones {
   margin: 0.8rem 0 0.4rem 0.4rem;
-  height: 1.8rem;
   display: flex;
-  justify-content: space-evenly;
+}
+
+button {
+  padding: 0.4rem 0;
+  width: 50%;
+  background-color: var(--gray);
+  border: none;
+  border-radius: 5px;
+  margin: 0 0.15rem;
+  transition: all 0.5s ease;
 }
 
 .proyecto-btn {
   font-weight: 700;
   font-size: 0.9rem;
-  cursor: pointer;
-  margin-right: 0.3rem;
-  background-color: var(--gray);
   color: var(--white);
-  border: none;
-  border-radius: 4px;
-  transition: all 0.5s ease;
-  padding: 0.3rem 2.5rem;
   text-decoration: none;
-  width: max-content;
+}
+
+button:hover {
+  opacity: 0.6;
 }
 
 .proyecto-pagina {
   background-color: var(--white);
-  color: var(--gray);
 }
 
-.proyecto-btn:hover {
-  background-color: var(--gray-hover);
-  color: var(--black);
+.proyecto-pagina-btn {
+  color: var(--gray);
 }
 
 .proyecto-resumen {
@@ -258,10 +265,6 @@ main {
     letter-spacing: 0.2rem;
   }
 
-  .proyecto-botones {
-    height: 1.7rem;
-  }
-
   .proyecto-foto {
     height: 350px;
   }
@@ -300,10 +303,6 @@ main {
     letter-spacing: 0.15rem;
     font-size: 2rem;
   }
-
-  .proyecto-botones {
-    height: 1.7rem;
-  }
 }
 
 @media screen and (min-width: 1150px) {
@@ -330,11 +329,6 @@ main {
     font-size: 1.7rem;
     letter-spacing: 0.1rem;
   }
-
-  .proyecto-btn {
-    padding: 0.15rem 2.5rem;
-    font-size: 1rem;
-  }
 }
 
 @media screen and (max-width: 945px) {
@@ -345,10 +339,6 @@ main {
   .foto-de-perfil {
     margin-top: 3.5rem;
     height: 300px;
-  }
-
-  .proyecto-btn {
-    padding: 0.35rem 2.5rem;
   }
 }
 
@@ -361,8 +351,8 @@ main {
     font-size: 1.4rem;
   }
 
-  .proyecto-btn {
-    padding: 0.2rem 2.5rem;
+  .proyecto-trabajo {
+    flex: 1 0 45%;
   }
 }
 
@@ -456,6 +446,10 @@ main {
 
   .proyecto-botones {
     justify-content: center;
+  }
+
+  button {
+    width: 35%;
   }
 
   #contacto {
